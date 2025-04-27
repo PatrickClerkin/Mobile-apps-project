@@ -1,13 +1,22 @@
+// src/app/app.routes.ts
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
   {
-    path: 'home',
-    loadComponent: () => import('./home/home.page').then((m) => m.HomePage),
+    path: '',
+    loadComponent: () => import('./pages/home.component').then(m => m.HomeComponent)
   },
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full',
+    path: 'task-form',
+    loadComponent: () => import('./pages/task-form.component').then(m => m.TaskFormComponent)
   },
+  {
+    path: 'task-form/:id',
+    loadComponent: () => import('./pages/task-form.component').then(m => m.TaskFormComponent)
+  },
+  {
+    path: '**',
+    redirectTo: '',
+    pathMatch: 'full'
+  }
 ];
