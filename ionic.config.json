@@ -1,0 +1,7 @@
+{
+  "name": "geotask",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
